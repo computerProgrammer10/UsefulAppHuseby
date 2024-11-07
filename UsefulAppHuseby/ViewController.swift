@@ -34,21 +34,18 @@ class Student: Codable{
     var volunteered: Int
     // how many times a student was chosen against their will by luck (boooo)
     var generated: Int
-    var correct: Int
-    var incorrect: Int
     
     init(name: String) {
         self.name = name; self.volunteered = 0; self.generated = 0;
-        self.correct = 0;
-        self.incorrect = 0;
     }
     
     init(){
         name = "Default"
         volunteered = 0
         generated = 0
-        correct = 0
-        incorrect = 0
+    }
+    func resetData(){
+        volunteered = 0; generated = 0;
     }
 }
 
@@ -86,6 +83,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         AppData.curSlot = indexPath.row
         performSegue(withIdentifier: "toClassSegue", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let alert = UIAlertController(title: "Delete?", message: "What do you want to do?", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Delete Class", style: .destructive) {(action) in
+                AppData.saves.remove(at: indexPath.row)
+                self.tableViewOutlet.reloadData()
+                AppData.saveData()
+            }
+            let action2 = UIAlertAction(title: "Reset Student Data", style: .default) {(action) in
+                for s in AppData.saves[indexPath.row].thisClass{
+                    s.resetData()
+                }
+                AppData.saveData()
+            }
+            let action3 = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(action)
+            alert.addAction(action2)
+            alert.addAction(action3)
+            self.present(alert, animated: true)
+        }
     }
     
 
