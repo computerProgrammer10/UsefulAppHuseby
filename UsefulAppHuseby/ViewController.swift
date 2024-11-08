@@ -167,6 +167,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.present(alert, animated: true)
     }
     
+    
+    @IBAction func helpAction(_ sender: Any) {
+        
+            performSegue(withIdentifier: "toHelpSegue", sender: nil)
+    }
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "toClassSegue"{
 //            let nvc = segue.destination as! studentsViewController
