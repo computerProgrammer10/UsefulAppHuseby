@@ -95,11 +95,10 @@
             </objects>
             <point key="canvasLocation" x="988.05970149253722" y="-2.7459954233409607"/>
         </scene>
-        <!--View Controller-->
+        <!--How To Use View Controller-->
         <scene sceneID="wBE-ZA-4mk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bq4-3G-57C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="FC1-nt-353" sceneMemberID="viewController">
+                <viewController id="FC1-nt-353" customClass="howToUseViewController" customModule="UsefulAppHuseby" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QVl-KV-nDO">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="864"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +200,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="vqE-uV-ArZ"/>
+                    <connections>
+                        <outlet property="randomStudentButton" destination="xk6-FI-IrA" id="cMH-TO-q86"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bq4-3G-57C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1953.731343283582" y="-42.562929061784892"/>
         </scene>

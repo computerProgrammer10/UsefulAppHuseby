@@ -69,6 +69,8 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             curStudent = AppData.saves[AppData.curSlot].thisClass[Int.random(in: 0...AppData.saves[AppData.curSlot].thisClass.count-1)]
             curStudent.generated+=1
             performSegue(withIdentifier: "viewStudentSegue", sender: nil)
+        }else{
+            createAlert(alertTitle: "No Students", alertDesc: "You must add at least one student for this to do something")
         }
     }
     
@@ -97,6 +99,11 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func createAlert(alertTitle: String, alertDesc: String){
+        let alert = UIAlertController(title: alertTitle, message: alertDesc, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
 
     /*
     // MARK: - Navigation
