@@ -339,7 +339,13 @@
                         <viewLayoutGuide key="safeArea" id="irx-b8-GmK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nRO-pa-4jQ"/>
+                    <navigationItem key="navigationItem" id="nRO-pa-4jQ">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="LEv-5m-KIr">
+                            <connections>
+                                <action selector="editAction:" destination="DRc-rT-Seb" id="YSm-hw-XFk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="byTeacherOutlet" destination="q6q-Xs-1c2" id="qKb-92-KRe"/>
                         <outlet property="generatedOutlet" destination="KrI-u1-zxj" id="TKh-W0-Deh"/>
@@ -349,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UM8-WB-tiy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652.2388059701493" y="830.66361556064066"/>
+            <point key="canvasLocation" x="1433" y="1407"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DfW-rs-CbF">

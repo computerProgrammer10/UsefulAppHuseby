@@ -42,8 +42,50 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             alert.addAction(action2)
             alert.addAction(action3)
             self.present(alert, animated: true)
+        }else if editingStyle == .insert{
+            curStudent = AppData.saves[AppData.curSlot].thisClass[indexPath.row]
+            performSegue(withIdentifier: "alsoEditSegue", sender: nil)
         }
     }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
+            let alert = UIAlertController(title: "Delete?", message: "What do you want to do?", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Delete Student", style: .destructive) {(action) in
+                AppData.saves[AppData.curSlot].thisClass.remove(at: indexPath.row)
+                self.tableViewOutlet.reloadData()
+                AppData.saveData()
+            }
+            let action2 = UIAlertAction(title: "Reset Student Data", style: .default) {(action) in
+                AppData.saves[AppData.curSlot].thisClass[indexPath.row].resetData()
+                self.tableViewOutlet.reloadData()
+                AppData.saveData()
+            }
+            let action3 = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(action)
+            alert.addAction(action2)
+            alert.addAction(action3)
+            self.present(alert, animated: true)
+        }
+        let edit = UITableViewRowAction(style: .default, title: "Edit") { action, indexPath in
+            let alert = UIAlertController(title: "Edit Student", message: "Type a new name for the student", preferredStyle: .alert)
+            alert.addTextField{ (textfield) in
+                textfield.placeholder = "Enter Name Here!"
+            }
+            let action = UIAlertAction(title: "Submit", style: .default) {(action) in
+                AppData.saves[AppData.curSlot].thisClass[indexPath.row].name = alert.textFields![0].text!
+                AppData.saveData()
+                self.tableViewOutlet.reloadData()
+            }
+            let action2 = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(action)
+            alert.addAction(action2)
+            self.present(alert, animated: true)
+            
+        }
+        edit.backgroundColor = .blue
+        return [delete, edit]
+    }
+    
     
     var curStudent = Student()
     

@@ -104,8 +104,66 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             alert.addAction(action2)
             alert.addAction(action3)
             self.present(alert, animated: true)
+        }else if editingStyle == .insert{
+            AppData.curSlot = indexPath.row
+            performSegue(withIdentifier: "classEditSegue", sender: nil)
         }
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
+            let alert = UIAlertController(title: "Delete?", message: "What do you want to do?", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Delete Class", style: .destructive) {(action) in
+                AppData.saves.remove(at: indexPath.row)
+                self.tableViewOutlet.reloadData()
+                AppData.saveData()
+            }
+            let action2 = UIAlertAction(title: "Reset Student Data", style: .default) {(action) in
+                for s in AppData.saves[indexPath.row].thisClass{
+                    s.resetData()
+                }
+                AppData.saveData()
+            }
+            let action3 = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(action)
+            alert.addAction(action2)
+            alert.addAction(action3)
+            self.present(alert, animated: true)
+        }
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, indexPath in
+            let alert = UIAlertController(title: "Edit Class", message: "Type a new name for the class", preferredStyle: .alert)
+            alert.addTextField{ (textfield) in
+                textfield.placeholder = "Enter Name Here!"
+            }
+            let action = UIAlertAction(title: "Submit", style: .default) {(action) in
+                AppData.saves[indexPath.row].className = alert.textFields![0].text!
+                AppData.saveData()
+                self.tableViewOutlet.reloadData()
+            }
+            let action2 = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(action)
+            alert.addAction(action2)
+            self.present(alert, animated: true)
+            
+        }
+        edit.backgroundColor = .blue
+        return [delete, edit]
+    }
+    
+//    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//        
+//        let edit = UITableViewRowAction(style: .normal, title: "Edit Student"){(action, indexPath) in
+//            print("Hello!")
+//            
+//        }
+//        return edit
+//    }
+//    
+    
     
 
     var defaults = UserDefaults.standard
