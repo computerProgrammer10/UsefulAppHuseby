@@ -115,8 +115,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
-            let alert = UIAlertController(title: "Delete?", message: "What do you want to do?", preferredStyle: .alert)
+        let delete = UITableViewRowAction(style: .destructive, title: "More") { action, indexPath in
+            let alert = UIAlertController(title: "More Options", message: "What do you want to do?", preferredStyle: .alert)
             let action = UIAlertAction(title: "Delete Class", style: .destructive) {(action) in
                 AppData.saves.remove(at: indexPath.row)
                 self.tableViewOutlet.reloadData()
@@ -151,6 +151,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         edit.backgroundColor = .blue
+        delete.backgroundColor = .purple
         return [delete, edit]
     }
     

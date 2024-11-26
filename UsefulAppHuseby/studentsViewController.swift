@@ -48,8 +48,8 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
-            let alert = UIAlertController(title: "Delete?", message: "What do you want to do?", preferredStyle: .alert)
+        let delete = UITableViewRowAction(style: .destructive, title: "More") { action, indexPath in
+            let alert = UIAlertController(title: "More Options", message: "What do you want to do?", preferredStyle: .alert)
             let action = UIAlertAction(title: "Delete Student", style: .destructive) {(action) in
                 AppData.saves[AppData.curSlot].thisClass.remove(at: indexPath.row)
                 self.tableViewOutlet.reloadData()
@@ -82,6 +82,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             self.present(alert, animated: true)
             
         }
+        delete.backgroundColor = .purple
         edit.backgroundColor = .blue
         return [delete, edit]
     }
