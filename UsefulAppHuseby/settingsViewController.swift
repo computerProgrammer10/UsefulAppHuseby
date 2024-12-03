@@ -11,6 +11,8 @@ class settingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Billy bob")
 
         // Do any additional setup after loading the view.
     }
