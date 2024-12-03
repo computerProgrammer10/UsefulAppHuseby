@@ -14,6 +14,8 @@ class settingsViewController: UIViewController {
         
         print("Billy bob")
         var billyBob = "qwerty"
+        
+        var billyBob2 = billyBob + "asdfghj"
         // Do any additional setup after loading the view.
     }
     
