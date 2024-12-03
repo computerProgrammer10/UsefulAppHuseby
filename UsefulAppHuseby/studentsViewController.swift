@@ -142,6 +142,11 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    
+    @IBAction func settingsAction(_ sender: Any) {
+        performSegue(withIdentifier: "toSettings", sender: nil)
+    }
+    
     func createAlert(alertTitle: String, alertDesc: String){
         let alert = UIAlertController(title: alertTitle, message: alertDesc, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

@@ -216,16 +216,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e2N-j1-xZp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e2N-j1-xZp">
                                 <rect key="frame" x="0.0" y="150" width="402" height="583"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="OmP-Td-Sbj" customClass="YummyCell" customModule="UsefulAppHuseby" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="402" height="100"/>
+                                        <rect key="frame" x="0.0" y="50" width="402" height="125"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OmP-Td-Sbj" id="rJY-wr-7cp">
-                                            <rect key="frame" x="0.0" y="0.0" width="402" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="402" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38x-0S-SA9" userLabel="🍌🍌🍌🍌🍌🍌">
@@ -235,8 +235,15 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Times Chosen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meO-as-tno" userLabel="🍌🍌🍌🍌🍌🍌">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Times Chosen by Teacher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meO-as-tno" userLabel="🍌🍌🍌🍌🍌🍌">
                                                     <rect key="frame" x="20" y="54" width="283" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Times Chosen by Luck" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL8-CP-uSE" userLabel="🍌🍌🍌🍌🍌🍌">
+                                                    <rect key="frame" x="20" y="84" width="283" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -247,6 +254,7 @@
                                         <connections>
                                             <outlet property="nameOutlet" destination="38x-0S-SA9" id="YBJ-eH-FfJ"/>
                                             <outlet property="timesChosenOutlet" destination="meO-as-tno" id="Uq6-eU-yfK"/>
+                                            <outlet property="timesChosenRandom" destination="qL8-CP-uSE" id="zxe-4L-hCj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -276,21 +284,71 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="S8X-Lr-sgI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zjj-c2-lUl">
-                            <connections>
-                                <action selector="addStudent:" destination="YaD-N7-4QG" id="BNY-1e-H9L"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Zjj-c2-lUl">
+                                <connections>
+                                    <action selector="addStudent:" destination="YaD-N7-4QG" id="BNY-1e-H9L"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="gear" catalog="system" id="Yer-u3-77I">
+                                <connections>
+                                    <action selector="settingsAction:" destination="YaD-N7-4QG" id="QfP-ep-jkP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="randomButtonOutlet" destination="0Te-Nt-B82" id="gGO-fT-gNg"/>
                         <outlet property="tableViewOutlet" destination="e2N-j1-xZp" id="zah-yT-gxy"/>
                         <segue destination="DRc-rT-Seb" kind="show" identifier="viewStudentSegue" id="Gxk-4y-y2g"/>
+                        <segue destination="bRt-a2-89y" kind="show" identifier="toSettings" id="0pH-GX-dMT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Fz-b38" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1862.686567164179" y="639.81693363844386"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Wq5-cF-1zp">
+            <objects>
+                <viewController id="bRt-a2-89y" customClass="settingsViewController" customModule="UsefulAppHuseby" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uwD-yG-hUN">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nq2-fO-IXE">
+                                <rect key="frame" x="0.0" y="103" width="402" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Class Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lw-4P-gNd">
+                                <rect key="frame" x="0.0" y="176" width="402" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSz-WC-9fP">
+                                <rect key="frame" x="48" y="477" width="306" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset All Students' Data">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q4g-Af-zUS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ne7-EU-aoC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QN9-x7-bOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2649" y="697"/>
         </scene>
         <!--View Student View Controller-->
         <scene sceneID="K63-AF-Rya">
@@ -377,6 +435,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
         <systemColor name="systemBackgroundColor">
@@ -384,6 +443,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
