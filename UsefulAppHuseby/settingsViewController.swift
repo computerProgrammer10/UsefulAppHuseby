@@ -13,7 +13,7 @@ class settingsViewController: UIViewController {
         super.viewDidLoad()
         
         print("Billy bob")
-
+        var billyBob = "qwerty"
         // Do any additional setup after loading the view.
     }
     
