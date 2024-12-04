@@ -209,6 +209,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func addAction(_ sender: Any) {
+        print("DANGER DANGER DANGER. WHY? DANGER. DIE DIE DIE. THANSK :D :D :D THANSK")
         let alert = UIAlertController(title: "Class Name!", message: "Name your new class!", preferredStyle: .alert)
         alert.addTextField{ (textfield) in
             textfield.placeholder = "Enter Name Here!"

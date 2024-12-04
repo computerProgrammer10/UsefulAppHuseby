@@ -330,8 +330,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-JJ-Rb1">
+                                <rect key="frame" x="48" y="408" width="306" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit Class Name">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editClassAction:" destination="bRt-a2-89y" eventType="touchUpInside" id="SXK-pb-UtR"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSz-WC-9fP">
-                                <rect key="frame" x="48" y="477" width="306" height="76"/>
+                                <rect key="frame" x="48" y="499" width="306" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -339,16 +352,24 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Reset All Students' Data">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="resetButtonAction:" destination="bRt-a2-89y" eventType="touchUpInside" id="qas-Hc-cUM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q4g-Af-zUS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ne7-EU-aoC"/>
+                    <connections>
+                        <outlet property="classNameOutlet" destination="7Lw-4P-gNd" id="8Rv-wS-oIN"/>
+                        <outlet property="editClassOutlet" destination="gdD-JJ-Rb1" id="z2d-gs-4ev"/>
+                        <outlet property="resetButtonOutlet" destination="GSz-WC-9fP" id="RiM-ek-q3O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN9-x7-bOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2649" y="697"/>
+            <point key="canvasLocation" x="2647.7611940298507" y="696.7963386727688"/>
         </scene>
         <!--View Student View Controller-->
         <scene sceneID="K63-AF-Rya">
