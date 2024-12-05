@@ -89,6 +89,7 @@
                         <segue destination="FC1-nt-353" kind="popoverPresentation" identifier="toHelpSegue" popoverAnchorView="8bC-Xf-vdC" id="hQV-4v-onL">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="bRt-a2-89y" kind="show" identifier="toSettingsAgain" id="BHL-zg-eFW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -306,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Fz-b38" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1862.686567164179" y="639.81693363844386"/>
+            <point key="canvasLocation" x="1054" y="761"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Wq5-cF-1zp">
@@ -356,6 +357,13 @@
                                     <action selector="resetButtonAction:" destination="bRt-a2-89y" eventType="touchUpInside" id="qas-Hc-cUM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIG-Gj-9jf">
+                                <rect key="frame" x="0.0" y="234" width="402" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q4g-Af-zUS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -365,6 +373,7 @@
                         <outlet property="classNameOutlet" destination="7Lw-4P-gNd" id="8Rv-wS-oIN"/>
                         <outlet property="editClassOutlet" destination="gdD-JJ-Rb1" id="z2d-gs-4ev"/>
                         <outlet property="resetButtonOutlet" destination="GSz-WC-9fP" id="RiM-ek-q3O"/>
+                        <outlet property="studentCountOutlet" destination="gIG-Gj-9jf" id="o02-eh-lBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN9-x7-bOq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -455,6 +464,9 @@
             <point key="canvasLocation" x="61.832061068702288" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0pH-GX-dMT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="plus" catalog="system" width="128" height="113"/>

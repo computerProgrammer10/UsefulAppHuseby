@@ -16,9 +16,12 @@ class settingsViewController: UIViewController {
     
     @IBOutlet weak var classNameOutlet: UILabel!
     
+    @IBOutlet weak var studentCountOutlet: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        classNameOutlet.text = AppData.saves[AppData.curSlot].className
+        reloadData()
         resetButtonOutlet.layer.cornerRadius = 10
         editClassOutlet.layer.cornerRadius = 10
 
@@ -33,6 +36,7 @@ class settingsViewController: UIViewController {
     }
     
     func reloadData(){
+        studentCountOutlet.text = "\(AppData.saves[AppData.curSlot].thisClass.count)" + " students"
         classNameOutlet.text = AppData.saves[AppData.curSlot].className
     }
     
@@ -44,6 +48,7 @@ class settingsViewController: UIViewController {
         AppData.saveData()
         let alert = UIAlertController(title: "Data Reset", message: "Data has been reset", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true)
     }
     
     

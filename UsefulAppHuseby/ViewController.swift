@@ -150,9 +150,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.present(alert, animated: true)
             
         }
+        let view = UITableViewRowAction(style: .normal, title: "View") { action, indexPath in
+            AppData.curSlot = indexPath.row
+            self.performSegue(withIdentifier: "toSettingsAgain", sender: nil)
+            
+        }
+        view.backgroundColor = .magenta
         edit.backgroundColor = .blue
         delete.backgroundColor = .purple
-        return [delete, edit]
+        return [delete, edit, view]
     }
     
 //    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -209,7 +215,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func addAction(_ sender: Any) {
-        print("DANGER DANGER DANGER. WHY? DANGER. DIE DIE DIE. THANSK :D :D :D THANSK")
+//        print("DANGER DANGER DANGER. WHY? DANGER. DIE DIE DIE. THANSK :D :D :D THANSK")
         let alert = UIAlertController(title: "Class Name!", message: "Name your new class!", preferredStyle: .alert)
         alert.addTextField{ (textfield) in
             textfield.placeholder = "Enter Name Here!"

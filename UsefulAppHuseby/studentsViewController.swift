@@ -82,9 +82,15 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             self.present(alert, animated: true)
             
         }
+        let view = UITableViewRowAction(style: .normal, title: "View") { action, indexPath in
+            self.curStudent = AppData.saves[AppData.curSlot].thisClass[indexPath.row]
+            self.performSegue(withIdentifier: "viewStudentSegue", sender: nil)
+            
+        }
+        view.backgroundColor = .magenta
         delete.backgroundColor = .purple
         edit.backgroundColor = .blue
-        return [delete, edit]
+        return [delete, edit, view]
     }
     
     
