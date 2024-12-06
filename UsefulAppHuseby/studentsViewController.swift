@@ -87,9 +87,9 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             self.performSegue(withIdentifier: "viewStudentSegue", sender: nil)
             
         }
-        view.backgroundColor = .magenta
-        delete.backgroundColor = .purple
-        edit.backgroundColor = .blue
+        view.backgroundColor = UIColor.systemTeal
+        edit.backgroundColor = UIColor.systemGreen
+        delete.backgroundColor = UIColor.magenta
         return [delete, edit, view]
     }
     

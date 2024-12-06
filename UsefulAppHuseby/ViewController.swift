@@ -155,9 +155,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.performSegue(withIdentifier: "toSettingsAgain", sender: nil)
             
         }
-        view.backgroundColor = .magenta
-        edit.backgroundColor = .blue
-        delete.backgroundColor = .purple
+        view.backgroundColor = UIColor.systemTeal
+        edit.backgroundColor = UIColor.systemGreen
+        delete.backgroundColor = UIColor.magenta
         return [delete, edit, view]
     }
     
