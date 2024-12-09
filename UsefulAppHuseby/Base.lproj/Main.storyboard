@@ -364,6 +364,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtr-Pl-aCi">
+                                <rect key="frame" x="48" y="592" width="306" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" systemColor="systemTealColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Change Background Color">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="editBackgroundColor:" destination="bRt-a2-89y" eventType="touchUpInside" id="Wca-Io-dlx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q4g-Af-zUS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -371,6 +384,7 @@
                     <navigationItem key="navigationItem" id="ne7-EU-aoC"/>
                     <connections>
                         <outlet property="classNameOutlet" destination="7Lw-4P-gNd" id="8Rv-wS-oIN"/>
+                        <outlet property="editBackgroundColor" destination="Qtr-Pl-aCi" id="Ida-Qn-6SP"/>
                         <outlet property="editClassOutlet" destination="gdD-JJ-Rb1" id="z2d-gs-4ev"/>
                         <outlet property="resetButtonOutlet" destination="GSz-WC-9fP" id="RiM-ek-q3O"/>
                         <outlet property="studentCountOutlet" destination="gIG-Gj-9jf" id="o02-eh-lBY"/>
@@ -465,7 +479,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0pH-GX-dMT"/>
+        <segue reference="BHL-zg-eFW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
@@ -477,8 +491,14 @@
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
