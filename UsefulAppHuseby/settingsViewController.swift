@@ -18,7 +18,7 @@ class settingsViewController: UIViewController {
     
     @IBOutlet weak var studentCountOutlet: UILabel!
     
-    @IBOutlet weak var editBackgroundColorOutlet: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
