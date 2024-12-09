@@ -10,8 +10,8 @@ import UIKit
 class Save: Codable{
     var className: String
     var thisClass: [Student]
-    var thisColor: UIColor
-    init(className: String, thisClass: [Student], thisColor: UIColor) {
+    var thisColor: String
+    init(className: String, thisClass: [Student], thisColor: String) {
         self.className = className
         self.thisClass = thisClass
         self.thisColor = thisColor
@@ -19,7 +19,7 @@ class Save: Codable{
     init(){
         self.className = "Default"
         self.thisClass = [Student]()
-        self.thisColor = .white
+        self.thisColor = "systemBackground"
     }
 //    func mostSelectedStudent() -> Student{
 //        var mS: thisClass[0]

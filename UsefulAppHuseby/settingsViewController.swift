@@ -74,9 +74,9 @@ class settingsViewController: UIViewController {
         let alert = UIAlertController(title: "Edit Background", message: "Type a new name for the Background Color", preferredStyle: .alert)
         alert.addTextField{ (textfield) in
             textfield.placeholder = "Enter color Here!"
-        
-        let action = UIAlertAction(title: "Submit", style: .default) {(action) in
-            AppData.saves[AppData.curSlot].thisColor = alert.textFields![0].text!
+            
+            let action = UIAlertAction(title: "Submit", style: .default) {(action) in
+                AppData.saves[AppData.curSlot].thisColor = alert.textFields![0].text!
                 AppData.saveData()
                 self.reloadData()
                 
@@ -85,6 +85,7 @@ class settingsViewController: UIViewController {
             alert.addAction(action)
             alert.addAction(action2)
             self.present(alert, animated: true)
+        }
     }
     /*
     // MARK: - Navigation
