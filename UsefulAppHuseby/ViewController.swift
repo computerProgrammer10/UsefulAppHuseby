@@ -10,13 +10,16 @@ import UIKit
 class Save: Codable{
     var className: String
     var thisClass: [Student]
-    init(className: String, thisClass: [Student]) {
+    var thisColor: UIColor
+    init(className: String, thisClass: [Student], thisColor: UIColor) {
         self.className = className
         self.thisClass = thisClass
+        self.thisColor = thisColor
     }
     init(){
         self.className = "Default"
         self.thisClass = [Student]()
+        self.thisColor = .white
     }
 //    func mostSelectedStudent() -> Student{
 //        var mS: thisClass[0]
@@ -183,7 +186,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
-       
+
         if let blahSaves = defaults.data(forKey: "Saves"){
             if let decoded = try? decoder.decode([Save].self, from: blahSaves){
                 AppData.saves = decoded
