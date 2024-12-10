@@ -116,6 +116,8 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         var yellow = "yellow"
         var red = "red"
         var blue = "blue"
+        var black = "black"
+        var white = "white"
         if(green == color){
             tableViewOutlet.backgroundColor = .green
         }else if(yellow == color){
@@ -124,8 +126,12 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             tableViewOutlet.backgroundColor = .red
         }else if(blue == color){
             tableViewOutlet.backgroundColor = .blue
+        }else if(black == color){
+            tableViewOutlet.backgroundColor = .black
+        }else if(white == color){
+            tableViewOutlet.backgroundColor = .white
         }else{
-            print("No Change in backgrounf color")
+            print("No color called")
         }
     }
     
