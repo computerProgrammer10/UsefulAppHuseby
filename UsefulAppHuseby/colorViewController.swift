@@ -9,11 +9,15 @@ import UIKit
 
 class colorViewController: UIViewController {
 
+    var oldVC: settingsViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     /*
