@@ -105,8 +105,28 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         randomButtonOutlet.layer.cornerRadius = 10
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func findColor(color: String){
+        var green = "green"
+        var yellow = "yellow"
+        var red = "red"
+        var blue = "blue"
+        if(green == color){
+            tableViewOutlet.backgroundColor = .green
+        }else if(yellow == color){
+            tableViewOutlet.backgroundColor = .yellow
+        }else if(red == color){
+            tableViewOutlet.backgroundColor = .red
+        }else if(blue == color){
+            tableViewOutlet.backgroundColor = .blue
+        }else{
+            print("No Change in backgrounf color")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
