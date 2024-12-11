@@ -383,6 +383,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ne7-EU-aoC"/>
                     <connections>
+                        <outlet property="backgroundColorOutlet" destination="Qtr-Pl-aCi" id="pta-Iq-CDa"/>
                         <outlet property="classNameOutlet" destination="7Lw-4P-gNd" id="8Rv-wS-oIN"/>
                         <outlet property="editClassOutlet" destination="gdD-JJ-Rb1" id="z2d-gs-4ev"/>
                         <outlet property="resetButtonOutlet" destination="GSz-WC-9fP" id="RiM-ek-q3O"/>

@@ -16,6 +16,7 @@ class settingsViewController: UIViewController {
     
     @IBOutlet weak var classNameOutlet: UILabel!
     
+    @IBOutlet weak var backgroundColorOutlet: UIButton!
     @IBOutlet weak var studentCountOutlet: UILabel!
     
     
@@ -25,6 +26,7 @@ class settingsViewController: UIViewController {
         reloadData()
         resetButtonOutlet.layer.cornerRadius = 10
         editClassOutlet.layer.cornerRadius = 10
+        backgroundColorOutlet.layer.cornerRadius = 10
 
 //        print("Billy bob")
 //        var billyBob = "qwerty"
