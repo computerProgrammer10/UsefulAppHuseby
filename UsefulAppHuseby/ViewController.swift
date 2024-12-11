@@ -21,7 +21,7 @@ class Save: Codable{
         self.thisClass = [Student]()
         self.thisColor = "systemBackground"
     }
-    func findColor(color: String) -> UIColor{
+    func findColor() -> UIColor{
         var color = thisColor
         var green = "green"
         var yellow = "yellow"

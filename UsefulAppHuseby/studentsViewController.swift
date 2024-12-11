@@ -136,6 +136,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
 //    }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableViewOutlet.backgroundColor = AppData.saves[AppData.curSlot].findColor()
         tableViewOutlet.reloadData()
     }
     
