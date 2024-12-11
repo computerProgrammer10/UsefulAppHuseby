@@ -15,6 +15,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! YummyCell
         cell.configure(sStudent: AppData.saves[AppData.curSlot].thisClass[indexPath.row])
+        cell.backgroundColor = AppData.saves[AppData.curSlot].findColor()
         return cell
     }
     
@@ -136,8 +137,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
 //    }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableViewOutlet.backgroundColor = AppData.saves[AppData.curSlot].findColor()
-        tableViewOutlet.reloadData()
+                tableViewOutlet.reloadData()
     }
     
     @IBAction func randomStudentAction(_ sender: Any) {
