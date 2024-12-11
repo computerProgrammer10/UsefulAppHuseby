@@ -30,6 +30,12 @@ class colorViewController: UIViewController {
         changeColor(color: "blue")
     }
     
+    @IBAction func systemButton(_ sender: UIButton) {
+        AppData.saves[AppData.curSlot].thisColor = "white"
+    }
+    @IBAction func blueButton(_ sender: UIButton) {
+        AppData.saves[AppData.curSlot].thisColor = "blue"
+    }
     @IBAction func greenButton(_ sender: Any) {
         changeColor(color: "green")
     }
