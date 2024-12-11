@@ -111,29 +111,29 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func findColor(color: String){
-        var green = "green"
-        var yellow = "yellow"
-        var red = "red"
-        var blue = "blue"
-        var black = "black"
-        var white = "white"
-        if(green == color){
-            tableViewOutlet.backgroundColor = .green
-        }else if(yellow == color){
-            tableViewOutlet.backgroundColor = .yellow
-        }else if(red == color){
-            tableViewOutlet.backgroundColor = .red
-        }else if(blue == color){
-            tableViewOutlet.backgroundColor = .blue
-        }else if(black == color){
-            tableViewOutlet.backgroundColor = .black
-        }else if(white == color){
-            tableViewOutlet.backgroundColor = .white
-        }else{
-            print("No color called")
-        }
-    }
+//    func findColor(color: String){
+//        var green = "green"
+//        var yellow = "yellow"
+//        var red = "red"
+//        var blue = "blue"
+//        var black = "black"
+//        var white = "white"
+//        if(green == color){
+//            tableViewOutlet.backgroundColor = .green
+//        }else if(yellow == color){
+//            tableViewOutlet.backgroundColor = .yellow
+//        }else if(red == color){
+//            tableViewOutlet.backgroundColor = .red
+//        }else if(blue == color){
+//            tableViewOutlet.backgroundColor = .blue
+//        }else if(black == color){
+//            tableViewOutlet.backgroundColor = .black
+//        }else if(white == color){
+//            tableViewOutlet.backgroundColor = .white
+//        }else{
+//            print("No color called")
+//        }
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         tableViewOutlet.reloadData()

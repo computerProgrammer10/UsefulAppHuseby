@@ -21,6 +21,30 @@ class Save: Codable{
         self.thisClass = [Student]()
         self.thisColor = "systemBackground"
     }
+    func findColor() -> UIColor{
+        var color = thisColor
+        var green = "green"
+        var yellow = "yellow"
+        var red = "red"
+        var blue = "blue"
+        var black = "black"
+        var white = "white"
+        if(green == color){
+            return .green
+        }else if(yellow == color){
+            return .yellow
+        }else if(red == color){
+            return .red
+        }else if(blue == color){
+            return .blue
+        }else if(black == color){
+            return .black
+        }else if(white == color){
+            return .white
+        }else{
+            return .systemBackground
+        }
+    }
 //    func mostSelectedStudent() -> Student{
 //        var mS: thisClass[0]
 //        for s in thisClass{
