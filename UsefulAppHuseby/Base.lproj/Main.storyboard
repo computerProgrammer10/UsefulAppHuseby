@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JrB-Mz-fNM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JrB-Mz-fNM">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -409,6 +409,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Blue">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="blueButton:" destination="HhU-sn-Qdd" eventType="touchUpInside" id="fGk-r8-kkD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-PE-T0K">
                                 <rect key="frame" x="108" y="330" width="186" height="58"/>
@@ -419,6 +422,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Green">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="greenButton:" destination="HhU-sn-Qdd" eventType="touchUpInside" id="30q-Vj-vyY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igy-M0-gyT">
                                 <rect key="frame" x="108" y="396" width="186" height="58"/>
@@ -429,6 +435,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Red">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="redbutton:" destination="HhU-sn-Qdd" eventType="touchUpInside" id="wWd-BM-Ltj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovH-ih-EeB">
                                 <rect key="frame" x="108" y="462" width="186" height="58"/>
@@ -439,6 +448,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Yellow">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="yellowButton:" destination="HhU-sn-Qdd" eventType="touchUpInside" id="d0a-dR-rZh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W10-9c-Nkv">
                                 <rect key="frame" x="108" y="198" width="186" height="58"/>
@@ -449,6 +461,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="White">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="whiteButton:" destination="HhU-sn-Qdd" eventType="touchUpInside" id="RND-gH-dX7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYG-zk-g2v">
                                 <rect key="frame" x="108" y="528" width="186" height="58"/>
@@ -459,6 +474,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Black">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="blackButton:" destination="HhU-sn-Qdd" eventType="touchUpInside" id="gMr-SO-Jib"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Color!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poI-NT-E80">
                                 <rect key="frame" x="0.0" y="120" width="402" height="36"/>

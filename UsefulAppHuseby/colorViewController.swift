@@ -17,6 +17,25 @@ class colorViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func systemButton(_ sender: UIButton) {
+        AppData.saves[AppData.curSlot].thisColor = "white"
+    }
+    @IBAction func blueButton(_ sender: UIButton) {
+        AppData.saves[AppData.curSlot].thisColor = "blue"
+    }
+    @IBAction func greenButton(_ sender: Any) {
+        AppData.saves[AppData.curSlot].thisColor = "green"
+    }
+    @IBAction func redButton(_ sender: Any) {
+        AppData.saves[AppData.curSlot].thisColor = "red"
+    }
+    @IBAction func yellowButton(_ sender: Any) {
+        AppData.saves[AppData.curSlot].thisColor = "yellow"
+    }
+    
+    
+    
+    
     
     
 
