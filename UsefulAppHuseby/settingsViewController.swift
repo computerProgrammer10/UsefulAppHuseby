@@ -71,20 +71,29 @@ class settingsViewController: UIViewController {
     }
     
     @IBAction func editBackgroundColor(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Edit Background", message: "Type a new name for the Background Color", preferredStyle: .alert)
-        alert.addTextField{ (textfield) in
-            textfield.placeholder = "Enter color Here!"
-            
-            let action = UIAlertAction(title: "Submit", style: .default) {(action) in
-                AppData.saves[AppData.curSlot].thisColor = alert.textFields![0].text!
-                AppData.saveData()
-                self.reloadData()
-                
-            }
-            let action2 = UIAlertAction(title: "Cancel", style: .cancel)
-            alert.addAction(action)
-            alert.addAction(action2)
-            self.present(alert, animated: true)
+//        let alert = UIAlertController(title: "Edit Background", message: "Type a new name for the Background Color", preferredStyle: .alert)
+//        alert.addTextField{ (textfield) in
+//            textfield.placeholder = "Enter color Here!"
+//            
+//            let action = UIAlertAction(title: "Submit", style: .default) {(action) in
+//                AppData.saves[AppData.curSlot].thisColor = alert.textFields![0].text!
+//                AppData.saveData()
+//                self.reloadData()
+//                
+//            }
+//            let action2 = UIAlertAction(title: "Cancel", style: .cancel)
+//            alert.addAction(action)
+//            alert.addAction(action2)
+//            self.present(alert, animated: true)
+//        }
+        performSegue(withIdentifier: "toColorSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toColorSegue"{
+            let nvc = segue.destination as! colorViewController
+            // send the name variable over to the redViewController
+            nvc.oldVC = self
         }
     }
     /*
