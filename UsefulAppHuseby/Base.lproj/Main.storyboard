@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JrB-Mz-fNM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JrB-Mz-fNM">
     <device id="retina6_3" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -296,6 +296,11 @@
                                     <action selector="settingsAction:" destination="YaD-N7-4QG" id="QfP-ep-jkP"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="rectangle.and.pencil.and.ellipsis" catalog="system" id="1O9-xH-feu">
+                                <connections>
+                                    <action selector="sortTabButtom:" destination="YaD-N7-4QG" id="2s6-AT-GWI"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -574,6 +579,7 @@
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
+        <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="86"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

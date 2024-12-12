@@ -96,6 +96,7 @@ class settingsViewController: UIViewController {
             nvc.oldVC = self
         }
     }
+    
     /*
     // MARK: - Navigation
 
