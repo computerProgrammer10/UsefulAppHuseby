@@ -20,6 +20,7 @@ class colorViewController: UIViewController {
     func changeColor(color: String){
         AppData.saves[AppData.curSlot].thisColor = color
         AppData.saveData()
+        view.backgroundColor = AppData.saves[AppData.curSlot].findColor()
     }
     
     @IBAction func whiteButton(_ sender: Any) {

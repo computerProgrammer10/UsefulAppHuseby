@@ -36,7 +36,7 @@ class Save: Codable{
         }else if(red == color){
             return .red
         }else if(blue == color){
-            return .blue
+            return .systemMint
         }else if(black == color){
             return .black
         }else if(white == color){
