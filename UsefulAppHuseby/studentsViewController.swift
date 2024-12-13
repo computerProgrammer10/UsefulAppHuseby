@@ -106,7 +106,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var curStudent = Student()
     
-    var usedClass = AppData.saves[AppData.curSlot].thisClass
+    var usedClass = AppData.saves[AppData.curSlot].sortStudents()
     
     @IBOutlet weak var randomButtonOutlet: UIButton!
     @IBOutlet weak var tableViewOutlet: UITableView!
@@ -171,8 +171,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             var newStudent = Student()
             newStudent.name = alert.textFields![0].text!
             AppData.saves[AppData.curSlot].thisClass.append(newStudent)
-            AppData.saveData()
-            self.tableViewOutlet.reloadData()
+            self.updateStuff()
         }
         let action2 = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(action)
@@ -227,6 +226,11 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         self.present(alert, animated: true)
     }
     
+    func updateStuff(){
+        AppData.saveData()
+        self.usedClass = AppData.saves[AppData.curSlot].sortStudents()
+        self.tableViewOutlet.reloadData()
+    }
 
     /*
     // MARK: - Navigation
