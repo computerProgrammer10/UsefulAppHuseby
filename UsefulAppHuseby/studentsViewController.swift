@@ -191,25 +191,28 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func sortTabButtom(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Sorting Menu", message: "How do you want to sort?", preferredStyle: .alert)
         let action = UIAlertAction(title: "Alphabetical", style: .default) {(action) in
-//            AppData.saves[AppData.curSlot].thisClass[indexPath.row].resetData()
-//            self.tableViewOutlet.reloadData()
-//            AppData.saveData()
+            AppData.saves[AppData.curSlot].sortingMethod = 1
+            
         }
         let action2 = UIAlertAction(title: "Most Picked", style: .default) {(action) in
-//            AppData.saves[AppData.curSlot].thisClass[indexPath.row].resetData()
-//            self.tableViewOutlet.reloadData()
-//            AppData.saveData()
+            AppData.saves[AppData.curSlot].sortingMethod = 2
+
+
         }
         let action3 = UIAlertAction(title: "Least Picked", style: .default) {(action) in
-//            AppData.saves[AppData.curSlot].thisClass[indexPath.row].resetData()
-//            self.tableViewOutlet.reloadData()
-//            AppData.saveData()
+            AppData.saves[AppData.curSlot].sortingMethod = 3
+
         }
         let action4 = UIAlertAction(title: "Cancel", style: .destructive) {(action) in
+        }
+        let action5 = UIAlertAction(title: "Reset to Default", style: .cancel) {(action) in
+            AppData.saves[AppData.curSlot].sortingMethod = 0
+
         }
         alert.addAction(action)
         alert.addAction(action2)
         alert.addAction(action3)
+        alert.addAction(action5)
         alert.addAction(action4)
         self.present(alert, animated: true)
     }
