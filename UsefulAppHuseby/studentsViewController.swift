@@ -52,14 +52,18 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         let delete = UITableViewRowAction(style: .destructive, title: "More") { action, indexPath in
             let alert = UIAlertController(title: "More Options", message: "What do you want to do?", preferredStyle: .alert)
             let action = UIAlertAction(title: "Delete Student", style: .destructive) {(action) in
-                AppData.saves[AppData.curSlot].thisClass.remove(at: indexPath.row)
-                self.tableViewOutlet.reloadData()
-                AppData.saveData()
+                var studentToDelete = self.usedClass[indexPath.row]
+                // make this work somehow?????
+                for s in 0...AppData.saves[AppData.curSlot].thisClass.count{
+                    if AppData.saves[AppData.curSlot].thisClass[s] == studentToDelete{
+                        //???
+                    }
+                }
+                self.updateStuff()
             }
             let action2 = UIAlertAction(title: "Reset Student Data", style: .default) {(action) in
-                AppData.saves[AppData.curSlot].thisClass[indexPath.row].resetData()
-                self.tableViewOutlet.reloadData()
-                AppData.saveData()
+                self.usedClass[indexPath.row].resetData()
+                self.updateStuff()
             }
             let action3 = UIAlertAction(title: "Cancel", style: .cancel)
             alert.addAction(action)
@@ -73,9 +77,8 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
                 textfield.placeholder = "Enter Name Here!"
             }
             let action = UIAlertAction(title: "Submit", style: .default) {(action) in
-                AppData.saves[AppData.curSlot].thisClass[indexPath.row].name = alert.textFields![0].text!
-                AppData.saveData()
-                self.tableViewOutlet.reloadData()
+                self.usedClass[indexPath.row].name = alert.textFields![0].text!
+                self.updateStuff()
             }
             let action2 = UIAlertAction(title: "Cancel", style: .cancel)
             alert.addAction(action)
@@ -84,7 +87,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
         let view = UITableViewRowAction(style: .normal, title: "View") { action, indexPath in
-            self.curStudent = AppData.saves[AppData.curSlot].thisClass[indexPath.row]
+            self.curStudent = self.usedClass[indexPath.row]
             self.performSegue(withIdentifier: "viewStudentSegue", sender: nil)
             
         }
@@ -192,22 +195,21 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         let alert = UIAlertController(title: "Sorting Menu", message: "How do you want to sort?", preferredStyle: .alert)
         let action = UIAlertAction(title: "Alphabetical", style: .default) {(action) in
             AppData.saves[AppData.curSlot].sortingMethod = 1
-            
+            self.updateStuff()
         }
         let action2 = UIAlertAction(title: "Most Picked", style: .default) {(action) in
             AppData.saves[AppData.curSlot].sortingMethod = 2
-
-
+            self.updateStuff()
         }
         let action3 = UIAlertAction(title: "Least Picked", style: .default) {(action) in
             AppData.saves[AppData.curSlot].sortingMethod = 3
-
+            self.updateStuff()
         }
         let action4 = UIAlertAction(title: "Cancel", style: .destructive) {(action) in
         }
         let action5 = UIAlertAction(title: "Reset to Default", style: .cancel) {(action) in
             AppData.saves[AppData.curSlot].sortingMethod = 0
-
+            self.updateStuff()
         }
         alert.addAction(action)
         alert.addAction(action2)
