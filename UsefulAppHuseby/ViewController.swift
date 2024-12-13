@@ -47,6 +47,10 @@ class Save: Codable{
         }else{
             return .systemBackground
         }
+        func sortAlphabetical() -> [Student]{
+            let alpha = thisClass.sorted { $0.name < $1.name }
+            return alpha
+        }
     }
 //    func mostSelectedStudent() -> Student{
 //        var mS: thisClass[0]
