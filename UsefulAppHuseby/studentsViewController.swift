@@ -97,6 +97,8 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var curStudent = Student()
     
+    var usedClass = AppData.saves[AppData.curSlot].thisClass
+    
     @IBOutlet weak var randomButtonOutlet: UIButton!
     @IBOutlet weak var tableViewOutlet: UITableView!
     

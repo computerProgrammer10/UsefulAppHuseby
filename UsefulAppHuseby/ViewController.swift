@@ -11,6 +11,9 @@ class Save: Codable{
     var className: String
     var thisClass: [Student]
     var thisColor: String
+    //
+    var sortingMethod = 0
+    
     init(className: String, thisClass: [Student], thisColor: String) {
         self.className = className
         self.thisClass = thisClass
