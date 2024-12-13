@@ -102,6 +102,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var randomButtonOutlet: UIButton!
     @IBOutlet weak var tableViewOutlet: UITableView!
     
+    @IBOutlet weak var sortedTextOutlet: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

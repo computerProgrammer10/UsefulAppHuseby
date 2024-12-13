@@ -218,7 +218,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="e2N-j1-xZp">
-                                <rect key="frame" x="0.0" y="150" width="402" height="583"/>
+                                <rect key="frame" x="0.0" y="174" width="402" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -280,6 +280,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sorted by (?)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iiw-xg-GP6">
+                                <rect key="frame" x="0.0" y="150" width="402" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mxo-1u-cR2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -305,6 +312,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="randomButtonOutlet" destination="0Te-Nt-B82" id="gGO-fT-gNg"/>
+                        <outlet property="sortedTextOutlet" destination="Iiw-xg-GP6" id="CIN-0Q-G95"/>
                         <outlet property="tableViewOutlet" destination="e2N-j1-xZp" id="zah-yT-gxy"/>
                         <segue destination="DRc-rT-Seb" kind="show" identifier="viewStudentSegue" id="Gxk-4y-y2g"/>
                         <segue destination="bRt-a2-89y" kind="show" identifier="toSettings" id="0pH-GX-dMT"/>
@@ -312,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Fz-b38" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="761"/>
+            <point key="canvasLocation" x="1053.731343283582" y="760.64073226544622"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Wq5-cF-1zp">
@@ -575,7 +583,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BHL-zg-eFW"/>
+        <segue reference="0pH-GX-dMT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
