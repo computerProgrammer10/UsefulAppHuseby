@@ -4,7 +4,16 @@
 //
 //  Created by DANIEL HUSEBY on 10/30/24.
 //
+// MARK: - DANIEL IS THE GOAT.
 
+
+
+// MARK: - SEAVER IS A PONY
+
+
+
+
+// MARK: - JOHNS JUST HERE :0
 import UIKit
 
 class studentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -190,7 +199,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
-    
+    // MARK: - Sorting Button
     @IBAction func sortTabButtom(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Sorting Menu", message: "How do you want to sort?", preferredStyle: .alert)
         let action = UIAlertAction(title: "Alphabetical", style: .default) {(action) in
