@@ -34,29 +34,29 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
         performSegue(withIdentifier: "viewStudentSegue", sender: nil)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete{
-            let alert = UIAlertController(title: "Delete?", message: "What do you want to do?", preferredStyle: .alert)
-            let action = UIAlertAction(title: "Delete Student", style: .destructive) {(action) in
-                AppData.saves[AppData.curSlot].thisClass.remove(at: indexPath.row)
-                self.tableViewOutlet.reloadData()
-                AppData.saveData()
-            }
-            let action2 = UIAlertAction(title: "Reset Student Data", style: .default) {(action) in
-                AppData.saves[AppData.curSlot].thisClass[indexPath.row].resetData()
-                self.tableViewOutlet.reloadData()
-                AppData.saveData()
-            }
-            let action3 = UIAlertAction(title: "Cancel", style: .cancel)
-            alert.addAction(action)
-            alert.addAction(action2)
-            alert.addAction(action3)
-            self.present(alert, animated: true)
-        }else if editingStyle == .insert{
-            curStudent = AppData.saves[AppData.curSlot].thisClass[indexPath.row]
-            performSegue(withIdentifier: "alsoEditSegue", sender: nil)
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete{
+//            let alert = UIAlertController(title: "Delete?", message: "What do you want to do?", preferredStyle: .alert)
+//            let action = UIAlertAction(title: "Delete Student", style: .destructive) {(action) in
+//                AppData.saves[AppData.curSlot].thisClass.remove(at: indexPath.row)
+//                self.tableViewOutlet.reloadData()
+//                AppData.saveData()
+//            }
+//            let action2 = UIAlertAction(title: "Reset Student Data", style: .default) {(action) in
+//                AppData.saves[AppData.curSlot].thisClass[indexPath.row].resetData()
+//                self.tableViewOutlet.reloadData()
+//                AppData.saveData()
+//            }
+//            let action3 = UIAlertAction(title: "Cancel", style: .cancel)
+//            alert.addAction(action)
+//            alert.addAction(action2)
+//            alert.addAction(action3)
+//            self.present(alert, animated: true)
+//        }else if editingStyle == .insert{
+//            curStudent = AppData.saves[AppData.curSlot].thisClass[indexPath.row]
+//            performSegue(withIdentifier: "alsoEditSegue", sender: nil)
+//        }
+//    }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "More") { action, indexPath in
             let alert = UIAlertController(title: "More Options", message: "What do you want to do?", preferredStyle: .alert)
@@ -64,11 +64,12 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
                 var studentToDelete = self.usedClass[indexPath.row]
                 // make this work somehow?????
                 for s in 0...AppData.saves[AppData.curSlot].thisClass.count{
-                    if AppData.saves[AppData.curSlot].thisClass[s] == studentToDelete{
-                        //???
+                    if AppData.saves[AppData.curSlot].thisClass[s] === studentToDelete{
+                        AppData.saves[AppData.curSlot].thisClass.remove(at: s)
+                        self.updateStuff()
+                        break
                     }
                 }
-                self.updateStuff()
             }
             let action2 = UIAlertAction(title: "Reset Student Data", style: .default) {(action) in
                 self.usedClass[indexPath.row].resetData()
