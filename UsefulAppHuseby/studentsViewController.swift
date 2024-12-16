@@ -23,7 +23,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! YummyCell
-        cell.configure(sStudent: AppData.saves[AppData.curSlot].thisClass[indexPath.row])
+        cell.configure(sStudent: usedClass[indexPath.row])
         cell.backgroundColor = AppData.saves[AppData.curSlot].findColor()
         return cell
     }
@@ -153,7 +153,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
 //    }
     
     override func viewWillAppear(_ animated: Bool) {
-                tableViewOutlet.reloadData()
+        updateStuff()
     }
     
     @IBAction func randomStudentAction(_ sender: Any) {
@@ -231,6 +231,17 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func updateStuff(){
         AppData.saveData()
+        switch AppData.saves[AppData.curSlot].sortingMethod{
+        case 1:
+            self.sortedTextOutlet.text = "Sorted by Alphabetical"
+        case 2:
+            self.sortedTextOutlet.text = "Sorted by Most Picked"
+        case 3:
+            self.sortedTextOutlet.text = "Sorted by Least Picked"
+
+        default:
+            self.sortedTextOutlet.text = ""
+        }
         self.usedClass = AppData.saves[AppData.curSlot].sortStudents()
         self.tableViewOutlet.reloadData()
     }
