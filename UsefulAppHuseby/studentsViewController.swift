@@ -29,7 +29,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        curStudent = AppData.saves[AppData.curSlot].thisClass[indexPath.row]
+        curStudent = self.usedClass[indexPath.row]
         curStudent.volunteered+=1
         performSegue(withIdentifier: "viewStudentSegue", sender: nil)
     }
