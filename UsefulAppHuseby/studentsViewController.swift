@@ -119,6 +119,7 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateStuff()
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         randomButtonOutlet.layer.cornerRadius = 10
@@ -215,17 +216,17 @@ class studentsViewController: UIViewController, UITableViewDelegate, UITableView
             AppData.saves[AppData.curSlot].sortingMethod = 3
             self.updateStuff()
         }
-        let action4 = UIAlertAction(title: "Cancel", style: .destructive) {(action) in
+        let action4 = UIAlertAction(title: "Cancel", style: .cancel) {(action) in
         }
-        let action5 = UIAlertAction(title: "Reset to Default", style: .cancel) {(action) in
+        let action5 = UIAlertAction(title: "Reset to Default", style: .destructive) {(action) in
             AppData.saves[AppData.curSlot].sortingMethod = 0
             self.updateStuff()
         }
         alert.addAction(action)
         alert.addAction(action2)
         alert.addAction(action3)
-        alert.addAction(action5)
         alert.addAction(action4)
+        alert.addAction(action5)
         self.present(alert, animated: true)
     }
     
